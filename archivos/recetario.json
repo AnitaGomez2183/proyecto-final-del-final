@@ -1,0 +1,255 @@
+{
+    "tarta de atun": {
+        "ingredientes": [
+            {
+                "nombre": "atun",
+                "cantidad": "250",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "cebolla",
+                "cantidad": "0.5",
+                "unidad_de_medida": "kg"
+            },
+            {
+                "nombre": "masa de tarta",
+                "cantidad": "1",
+                "unidad_de_medida": "u"
+            }
+        ],
+        "preparacion": [
+            "picar cebolla y cocinarla en la sarten",
+            "Agregar el atun",
+            "Estirar la masa y colocar el relleno en un molde.",
+            "Rellenar y llevar al horno moderado 25 min."
+        ],
+        "imagenes": [
+            "tartadeatun.jpg",
+            "/img/plato.png"
+        ],
+        "duracion": "30 min",
+        "coccion": "60 min",
+        "fecha": "03/03/2023",
+        "etiquetas": [
+            "tarta",
+            "atun",
+            "sin carne"
+        ],
+        "favorita": true
+    },
+    "Pizza de anana": {
+        "ingredientes": [
+            {
+                "nombre": "prepizza",
+                "cantidad": "1",
+                "unidad_de_medida": "u"
+            },
+            {
+                "nombre": "cebolla",
+                "cantidad": "0.5",
+                "unidad_de_medida": "kg"
+            },
+            {
+                "nombre": "salsa de tomate",
+                "cantidad": "100",
+                "unidad_de_medida": "cc"
+            },
+            {
+                "nombre": "queso",
+                "cantidad": "300",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "anana",
+                "cantidad": "100",
+                "unidad_de_medida": "g"
+            }
+        ],
+        "preparacion": [
+            "Cubrir la \u00c2\u00b4prepizza con salsa",
+            "Agregar el queso en fetas",
+            "Llevar a horno y cocinar hasta que gratine el queso",
+            "Decorar con rodajas de anana."
+        ],
+        "imagenes": [
+            "pizzaanana.jpg",
+            "/img/plato.png"
+        ],
+        "duracion": "15 min",
+        "coccion": "10 min",
+        "fecha": "21/03/2023",
+        "etiquetas": [
+            "pizza",
+            "almuerzo",
+            "anana"
+        ],
+        "favorita": true
+    },
+    "Maicenas": {
+        "ingredientes": [
+            {
+                "nombre": "harina leudante",
+                "cantidad": "360",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "azucar",
+                "cantidad": "100",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "huevos",
+                "cantidad": "2",
+                "unidad_de_medida": "u"
+            },
+            {
+                "nombre": "manteca",
+                "cantidad": "150",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "dulce de leche",
+                "cantidad": "400",
+                "unidad_de_medida": "g"
+            }
+        ],
+        "preparacion": [
+            "Colocar en un bol el harina.",
+            "Batir la manteca (blanda) con el azucar, formando una crema y por ultimo agregar los huevos batidos. ",
+            "Mezclar todos los ingredientes y hacer que se forme la masa, tratando de solo de unirla, evitar el amasado.",
+            "Estirar la masa y con un cortante, cortar las tapas de las maicenas",
+            "Llevar al horno y cocinar hasta que apenas se doren.",
+            "Tomar una tapa y cubrirla con abundante dulce de leche y cubrirla con  otra tapa",
+            "Guardar las maicenitas es un frasco seco"
+        ],
+        "imagenes": [
+            "maicenas.jpeg",
+            "/img/plato.png"
+        ],
+        "duracion": "15 min",
+        "coccion": "10 min",
+        "fecha": "21/03/2023",
+        "etiquetas": [
+            "pizza",
+            "almuerzo",
+            "anana"
+        ],
+        "favorita": true
+    },
+    "Pasta frola": {
+        "ingredientes": [
+            {
+                "nombre": "harina leudante",
+                "cantidad": "360",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "azucar",
+                "cantidad": "100",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "huevos",
+                "cantidad": "2",
+                "unidad_de_medida": "u"
+            },
+            {
+                "nombre": "manteca",
+                "cantidad": "150",
+                "unidad_de_medida": "g"
+            },
+            {
+                "nombre": "dulce de membrillo",
+                "cantidad": "300",
+                "unidad_de_medida": "g"
+            }
+        ],
+        "preparacion": [
+            "Colocar en un bol el harina.",
+            "Batir la manteca (blanda) con el azucar, formando una crema y por ultimo agregar los huevos batidos. ",
+            "Mezclar todos los ingredientes y hacer que se forme la masa, tratando de solo de unirla, evitar el amasado.",
+            "Recubrir un molde de tarta de 24 cm., con la masa y separar un poco para el enrejado.",
+            "Preparar el dulce de membrillo, con un poco de agua caliente (cognac, es opcional) y aplastarlo.",
+            "Rellenar la tarta con el dulce y cubrirla con un enrejado con tiras de masa ",
+            "Cocinar a horno moderado, hasta que se dore la masa"
+        ],
+        "imagenes": [
+            "pastafrola.jpeg",
+            "/img/plato.png"
+        ],
+        "duracion": "20 minutes",
+        "coccion": "20 minutes",
+        "fecha": "15/03/23",
+        "etiquetas": [
+            "pizza",
+            "almuerzo",
+            "anana"
+        ],
+        "favorita": true
+    },
+    "Pollo al horno": {
+        "ingredientes": [
+            {
+                "nombre": "pollo",
+                "cantidad": "1",
+                "unidad_de_medida": "u"
+            },
+            {
+                "nombre": "aceite",
+                "cantidad": "1",
+                "unidad_de_medida": "cda"
+            },
+            {
+                "nombre": "sal",
+                "cantidad": "1 ",
+                "unidad_de_medida": "pizca"
+            }
+        ],
+        "preparacion": [
+            "poner el pollo al horno",
+            "  cocinar 1 hora"
+        ],
+        "imagenes": [
+            "pollohorno.jpg"
+        ],
+        "duracion": "15",
+        "coccion": "60 min",
+        "fecha": "23/03/23",
+        "etiquetas": [
+            "pollo",
+            " almuerzo",
+            " cena",
+            " salado"
+        ],
+        "favorita": true
+    },
+    "pollo": {
+        "ingredientes": [
+            {
+                "nombre": "pollo",
+                "cantidad": "1",
+                "unidad_de_medida": "u"
+            },
+            {
+                "nombre": "sal",
+                "cantidad": "1",
+                "unidad_de_medida": "pizca"
+            }
+        ],
+        "preparacion": [
+            "poner el pollo an la fuente",
+            " llevar al horno  y cocinar "
+        ],
+        "imagenes": [
+            "pollohorno.jpg"
+        ],
+        "duracion": "15",
+        "coccion": "1 hora",
+        "fecha": "21/03/23",
+        "etiquetas": [
+            "pollo",
+            " salado"
+        ],
+        "favorita": true
+    }
+}
