@@ -128,7 +128,7 @@ class VentanaPrincipal(ttk.Frame):
             n_deldia = ""
 
         """
-        Creamos el widget Panedwindow para dividir el frame principal en dos
+        Dividimos el frame principal en dos
         """
         #self.panedwindow = ttk.Panedwindow(self.main_frame, orient="horizontal")
         self.panedwindow = ttk.Panedwindow(self.main_frame, orient="vertical")
@@ -195,7 +195,7 @@ class VentanaPrincipal(ttk.Frame):
         self.panedwindow.add(self.objeto_frame)
 
         """
-        Antes de empezar tomo los datos de receta del dia para ver que imagen voy a mostrar
+        Toma los datos de receta del dia para ver que imagen va a mostrar
         """
         obj = r_deldia[n_deldia]
         print(obj)
@@ -221,23 +221,23 @@ class VentanaPrincipal(ttk.Frame):
         field_font = ('TkDefaultFont', 14)
         row_count = 0  
         for key, value in obj.items():  
-           field_label = ttk.Label(self.fields_frame, text=key+":", anchor="e", justify="right", font=field_font)
-           field_label.grid(column=0, row=row_count, padx=(10, 5), pady=5, sticky='e')
-           
-           label_width = field_label.winfo_reqwidth()
-           if label_width > max_label_width:
-               max_label_width = label_width
-           
-           if isinstance(value, list):
-               value_listbox = tk.Listbox(self.fields_frame, height=len(value))
-               for item in value:
-                   value_listbox.insert(tk.END, item)
-               value_listbox.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
-           else:
-               value_label = ttk.Label(self.fields_frame, text=value, anchor="w", justify="left", font=field_font)
-               value_label.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
-           
-           row_count += 1
+            field_label = ttk.Label(self.fields_frame, text=key+":", anchor="e", justify="right", font=field_font)
+            field_label.grid(column=0, row=row_count, padx=(10, 5), pady=5, sticky='e')
+        
+            label_width = field_label.winfo_reqwidth()
+        if label_width > max_label_width:
+            max_label_width = label_width
+        
+        if isinstance(value, list):
+            value_listbox = tk.Listbox(self.fields_frame, height=len(value))
+            for item in value:
+                value_listbox.insert(tk.END, item)
+                value_listbox.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
+        else:
+                value_label = ttk.Label(self.fields_frame, text=value, anchor="w", justify="left", font=field_font)
+                value_label.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
+        
+        row_count += 1
     
         self.fields_frame.configure(width=max_label_width+20)  
     
