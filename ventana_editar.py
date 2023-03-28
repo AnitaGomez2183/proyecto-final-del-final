@@ -6,8 +6,8 @@ from tkinter import font
 import tkinter.messagebox as messagebox
 
 """ 
-Importamos tkinter para poder crear la ventana
-Tambien importamos todos los metodos y clases de recetario que nos permite utlizarlas en lo que necesitemos
+Importamos tkinter para crear la ventana
+Importamos todos los metodos y clases del recetario
 """
 
 class VentanaEditar(ttk.Frame):
@@ -27,7 +27,9 @@ class VentanaEditar(ttk.Frame):
 
         self.receta_name = nombre_receta
 
-        """tomamos la data utilizando el metodo correspondiente"""
+        """
+        Tomamos la data utilizando el metodo correspondiente.
+        """
         res = self.recetas_service.find_one(nombre_receta)
         if(res['status']== "Success"):
             self.receta = res['data'][nombre_receta]       
@@ -62,7 +64,9 @@ class VentanaEditar(ttk.Frame):
         fuente_mediana = font.Font(family="Arial", size=20, weight="bold")
         fuente_titulo = font.Font(family="Impact", size=30)
 
-        """voy a enlazar todos los campos del dictionary self.receta a variables de control tkinter"""
+        """
+        Enlaza los campos del dictionary self.receta a variables de control tkinter
+        """
         duracion_var = tk.StringVar()
         duracion_var.set(self.receta["duracion"])
         #duracion_var.trace("w", self.actualizar_diccionario)
@@ -79,7 +83,9 @@ class VentanaEditar(ttk.Frame):
 
 
 
-        """Creacion de los widgets con los entry correspondientes"""
+        """
+        Creacion de los widgets y entrys
+        """
         # valor_name = tk.StringVar(value=self.receta_name)        
         # tk.Label(self, text=f"Nombre de Receta: ").grid(row=0, column=0, padx=10, pady=10)
         # self.nombre_receta = tk.Entry(self, textvariable=valor_name, font=fuente_mediana)        

@@ -11,13 +11,13 @@ from ventana_editar import *
 from PIL import Image, ImageTk
 
 """
-Importamos las librerias necesarias y las clases que utilizamos
+Importamos las librerias y las clases
 """
 
 class VentanaPrincipal(ttk.Frame):
 
     """
-    En esta clase creamos la ventana principal que permite mostar la lista de recetas y los botones necesarios para llamar a los diferentes metodos
+    Clase para crear la ventana principal esta permite mostar las recetas en litas y  botones para llamar a los diferentes metodos
     """
 
     def __init__(self, master=None):
@@ -32,7 +32,7 @@ class VentanaPrincipal(ttk.Frame):
         title.pack()
 
         """
-        instanciamos la clase controlador de Receta
+        Instanciamos(CREAR?) la clase controlador de Receta
         """
         self.recetas_service = Manager("recetario.json")
 
@@ -42,7 +42,7 @@ class VentanaPrincipal(ttk.Frame):
 
     def abrir_alta_receta(self):
         """
-        método que abre la ventana para crear una nueva receta
+        Método para crear una nueva receta
         """
         root = ThemedTk(theme="ubuntu")
         vent=VentanaCreareceta(master=root)
@@ -50,7 +50,7 @@ class VentanaPrincipal(ttk.Frame):
         
     def abrir_mostrar_receta(self, key): 
         """
-        método que abre la ventana para mostrar una receta
+        Metodo para mostrar una receta
         """
         root = ThemedTk(theme="ubuntu")
         vent= VentanaMostrar(key,master=root)
@@ -58,7 +58,7 @@ class VentanaPrincipal(ttk.Frame):
 
     def abrir_editar_receta(self, key):
         """
-        método que abre la ventana para editar una receta
+        Metodo para editar una receta.
         """
         root = ThemedTk(theme="kroc")
         vent=VentanaEditar(key,master=root)
@@ -67,7 +67,7 @@ class VentanaPrincipal(ttk.Frame):
 
     def del_receta(self, key):   #pide la key
         """
-        método que elimina una receta
+        Metodo que elimina una receta
         """
 
         resultado = self.recetas_service.erase_one(key)
@@ -78,10 +78,10 @@ class VentanaPrincipal(ttk.Frame):
 
 
         """
-        Creamos todos los menú y label necesarios
+        Creamos los menus y labels
         """
     def create_menu_bar(self):
-        self.menu_bar = tk.Menu(self.master, bg="#F58182")
+        self.menu_bar = tk.Menu(self.master, bg="#3DDB6F")
         self.master.config(menu=self.menu_bar)
 
         self.archivo_menu = tk.Menu(self.menu_bar, tearoff=0)
@@ -114,7 +114,7 @@ class VentanaPrincipal(ttk.Frame):
         self.main_frame.configure(style="Main.TFrame")
 
         """
-        Solicitando al servicio la receta del dia
+        Muestra la receta del dia
         """
         res = self.recetas_service.recetaDelDia()
         if(res['status']=="Success"):
@@ -128,7 +128,7 @@ class VentanaPrincipal(ttk.Frame):
             n_deldia = ""
 
         """
-        Dividimos el frame principal en dos
+        Se divide el frame principal en dos
         """
         #self.panedwindow = ttk.Panedwindow(self.main_frame, orient="horizontal")
         self.panedwindow = ttk.Panedwindow(self.main_frame, orient="vertical")
@@ -188,14 +188,14 @@ class VentanaPrincipal(ttk.Frame):
             fila_boton_eliminar.pack(side="left", padx=10, pady=10)
     
         """
-        Creamos un frame para el objeto
+        Frame del objeto
         """
         self.objeto_frame = ttk.Frame(self.panedwindow)
         self.objeto_frame.configure(style="Objeto.TFrame")
         self.panedwindow.add(self.objeto_frame)
 
         """
-        Toma los datos de receta del dia para ver que imagen va a mostrar
+        Toma los datos de receta del dia para mostrar la imagen
         """
         obj = r_deldia[n_deldia]
         print(obj)
@@ -221,23 +221,23 @@ class VentanaPrincipal(ttk.Frame):
         field_font = ('TkDefaultFont', 14)
         row_count = 0  
         for key, value in obj.items():  
-            field_label = ttk.Label(self.fields_frame, text=key+":", anchor="e", justify="right", font=field_font)
-            field_label.grid(column=0, row=row_count, padx=(10, 5), pady=5, sticky='e')
-        
-            label_width = field_label.winfo_reqwidth()
-        if label_width > max_label_width:
-            max_label_width = label_width
-        
-        if isinstance(value, list):
-            value_listbox = tk.Listbox(self.fields_frame, height=len(value))
-            for item in value:
-                value_listbox.insert(tk.END, item)
-                value_listbox.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
-        else:
-                value_label = ttk.Label(self.fields_frame, text=value, anchor="w", justify="left", font=field_font)
-                value_label.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
-        
-        row_count += 1
+           field_label = ttk.Label(self.fields_frame, text=key+":", anchor="e", justify="right", font=field_font)
+           field_label.grid(column=0, row=row_count, padx=(10, 5), pady=5, sticky='e')
+           
+           label_width = field_label.winfo_reqwidth()
+           if label_width > max_label_width:
+               max_label_width = label_width
+           
+           if isinstance(value, list):
+               value_listbox = tk.Listbox(self.fields_frame, height=len(value))
+               for item in value:
+                   value_listbox.insert(tk.END, item)
+               value_listbox.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
+           else:
+               value_label = ttk.Label(self.fields_frame, text=value, anchor="w", justify="left", font=field_font)
+               value_label.grid(column=1, row=row_count, padx=(0, 10), pady=5, sticky='w')
+           
+           row_count += 1
     
         self.fields_frame.configure(width=max_label_width+20)  
     

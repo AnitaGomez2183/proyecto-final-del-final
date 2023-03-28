@@ -6,14 +6,14 @@ from manager import *
 from PIL import Image, ImageTk
 
 """ 
-Importamos tkinter para poder crear la ventana
-Tambien importamos todos los metodos y clases de recetario que nos permite utlizarlas en lo que necesitemos
+Importamos tkinter para crear la ventana
+Importamos todos los metodos y clases de recetario
 """
 
 class VentanaMostrar(ttk.Frame):
     
     """
-    En esta clase creamos la ventana que permite mostar una receta buscada por el usuario
+    En esta clase creamos la ventana para mostar una receta buscada por el usuario
     """
 
     def __init__(self, nombre_receta ="Pizza de anana" , master=None):
@@ -24,7 +24,7 @@ class VentanaMostrar(ttk.Frame):
         self.master.configure(bg="#F58182") 
 
         """
-        instanciamos la clase controlador de Receta
+        Instanciamos la clase controlador de Receta
         """
         self.recetas_service = Manager("recetario.json")
 
@@ -36,7 +36,7 @@ class VentanaMostrar(ttk.Frame):
             self.data = {}
 
         """
-        Creamos los label necesarios y las list box para mostrar los datos 
+        Creamos labelS y list box para mostrar los datos 
         """
         
         tk.Label(self, text="Ingredientes ").grid(row=0, column=0)
@@ -84,7 +84,7 @@ class VentanaMostrar(ttk.Frame):
 
 
         """ 
-        Creamos el Frame para la imagen
+        Frame de la imagen
         """
         self.imagen_frame = ttk.Frame(self)
         self.imagen_frame.grid(row=30, column=6, padx=25, pady=25, sticky='w')        
