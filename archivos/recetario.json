@@ -222,34 +222,5 @@
             " salado"
         ],
         "favorita": true
-    },
-    "pollo": {
-        "ingredientes": [
-            {
-                "nombre": "pollo",
-                "cantidad": "1",
-                "unidad_de_medida": "u"
-            },
-            {
-                "nombre": "sal",
-                "cantidad": "1",
-                "unidad_de_medida": "pizca"
-            }
-        ],
-        "preparacion": [
-            "poner el pollo an la fuente",
-            " llevar al horno  y cocinar "
-        ],
-        "imagenes": [
-            "pollohorno.jpg"
-        ],
-        "duracion": "15",
-        "coccion": "1 hora",
-        "fecha": "21/03/23",
-        "etiquetas": [
-            "pollo",
-            " salado"
-        ],
-        "favorita": true
     }
 }

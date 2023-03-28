@@ -1,35 +1,37 @@
 import json
-from servicio import *
-from ingrediente import *
-from receta import *
+from manager import *
+from ingredientes import *
+from recetario import *
 
 class Recetario:
     
-    nombre_archivo = "recetasDB.json"
+    nombre_archivo = "recetario.json"
 
     def __init__(self):
-        self.recetarioService = FileManager(Recetario.nombre_archivo)
+        self.recetarioService = Manager(Recetario.nombre_archivo)
     
-    def crearDB(self):
+    def creator(self):
+       """ Funcion que crea los archivos json(recetas)
+       """
        try: 
-           self.recetarioService.create({"guiso": {
+           self.recetarioService.creator({"pollo al horno": {
                "ingredientes": [{
-                    "nombre" : "papa",
+                    "nombre" : "pollo",
                     "cantidad" : "1",
-                    "unidad_de_medida" : "kg"
+                    "unidad_de_medida" : "u"
                },
                {
-                    "nombre" : "carne",
-                    "cantidad" : "0.5",
-                    "unidad_de_medida" : "kg"
+                    "nombre" : "aceite",
+                    "cantidad" : "1",
+                    "unidad_de_medida" : "cda"
                }
                ],
-               "preparacion": ["picar papa","picar carne"],
+               "preparacion": ["poner aceite al pollo","poner al horno y cocinar"],
                "imagenes": ["ruta imagen 1","ruta imagen 2"],
-               "duracion": "30 min",
+               "duracion": "15 min",
                "coccion": "60 min",
                "fecha": "03/03/2023",
-               "etiquetas": ["guiso", "carne","caliente"],
+               "etiquetas": ["pollo", "horno","caliente"],
                "favorita": True}
                })
        except Exception as e:
@@ -43,9 +45,9 @@ class Recetario:
                 "message": "El archivo recetario ha sido creado con Exito"
             }
        
-    def addOne(self, nombre, receta):
+    def sum_one(self, nombre, receta):
         try:
-            res = self.recetarioService.addOne(nombre, receta)
+            res = self.recetarioService.sum_one(nombre, receta)
             if(res["status"] == False):
                 return {
                 "status": False,
@@ -62,9 +64,9 @@ class Recetario:
                 "message": f"La receta {nombre} ha sido agregada con Exito"
             }
         
-    def delOne(self, nombre):
+    def erase_one(self, nombre):
         try:
-            res = self.recetarioService.deleteOne(nombre)
+            res = self.recetarioService.erase_one(nombre)
             if(res["status"] == False):
                 return {
                 "status": False,
@@ -81,9 +83,9 @@ class Recetario:
                 "message": res['message']
             }
     
-    def getAll(self):
+    def get_info(self):
         try:
-            data = self.recetarioService.getAll()            
+            data = self.recetarioService.get_info()            
         except Exception as e:
             return {
                 "status": False,
@@ -99,7 +101,7 @@ class Recetario:
         try:
             res = self.recetarioService.updateOne(nombre, newInfo)
             if(res["status"] == False):
-             return {
+                return {
                 "status": False,
                 "message": f"la receta {nombre} no Existe"
             }   

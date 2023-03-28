@@ -6,7 +6,10 @@ class Manager:
         self.__archivo = archivo        
     
 
-    def creator(self, info:dict):  # crea el archivo
+    def creator(self, info:dict): 
+        """
+        Funcion que crea el archivo
+        """
         try:
             with open(Manager.ruta + self.__archivo, "w") as wfile:
                 json.dump(info, wfile, indent=4)  # lo abre para escribirlo
@@ -18,7 +21,10 @@ class Manager:
             }
         
 
-    def get_info(self):  # método que obtiene todas las recetas (lista)
+    def get_info(self):  
+        """
+        Metodo que obtiene todas las recetas (lista)
+    """
         try: 
             with open(Manager.ruta+self.__archivo, "r") as usefile: #abre archivo y guarda los datos en dict
                 data = json.load(usefile) 
@@ -33,7 +39,10 @@ class Manager:
                 "info": data
             }
         
-    def find_one(self, key: str) -> dict:  #método que busca una receta por el nombre (key) y la devuelve
+    def find_one(self, key: str) -> dict: 
+        """
+        Metodo que busca una receta por el nombre (key) y la devuelve
+        """
         try:            
             data = self.get_info()  #trae las recetas a data
             data = data["info"]
@@ -58,7 +67,10 @@ class Manager:
             }
 
     
-    def sum_one(self, clave: str, valor) -> str:   #metodo que crea una receta - recibe clave (nombre) -valor (contenido de la receta)
+    def sum_one(self, clave: str, valor) -> str:
+        """
+        Metodo que crea una receta - recibe clave (nombre) -valor (contenido de la receta)
+        """
         try:
             data = self.get_info() #metodo que trae la info
             data = data["info"]  
@@ -83,7 +95,10 @@ class Manager:
                 "message": "Recipe has been added"
             }
     
-    def erase_one(self, llave: str)->str:  #borra la receta seleccionada, usando como parametro el nombre
+    def erase_one(self, llave: str)->str:
+        """ 
+        Funcion que borra la receta seleccionada, usando como parametro el nombre
+        """
         try:
             res = self.get_info()  # recibo una respuesta 
             recetas = res["info"]  # listado de receta y la guarda en res
@@ -104,10 +119,13 @@ class Manager:
         else:
             return {
                     "status": "Success",
-                    "message": f"El objeto con clave {llave} ha sido eliminado exitosamente"
+                    "message": f"The recipe {llave} has been erased successfully"
                 }            
         
-    def update_one(self, key, value) -> str:  # recibe una key (nombre) y escribe la nueva informacion
+    def update_one(self, key, value) -> str: 
+        """ 
+        Funcion que recibe una key (nombre) y escribe la nueva informacion
+        """
         try:
             data = self.get_info() # trae status yla info de la receta 
             data = data["info"]   # solo deja la lista de la receta
@@ -130,18 +148,21 @@ class Manager:
                     "status": "Success",
                     "message": f"Recipe {key} has been updated"
                 }                
-    def recetaDelDia(self):   # elige al azar una receta del listado 
-            from random import choice
-            try:
-                res = self.get_info()
-                claves = list(res['info'].keys()) #crea una lista con los nombres de la receta 
-                selected = choice(claves)   # elige la receta al azar y la devuelve            
-            except Exception as e:
+    def recetaDelDia(self):
+        """
+        Funcion que elige al azar una receta del listado
+        """ 
+        from random import choice
+        try:
+            res = self.get_info()
+            claves = list(res['info'].keys()) #crea una lista con los nombres de la receta 
+            selected = choice(claves)   # elige la receta al azar y la devuelve            
+        except Exception as e:
                 return {
                     "status": "Failed",
                     "message": str(e)
                 }
-            else:
+        else:
                 return {
                     "status": "Success",
                     "deldia": selected

@@ -3,13 +3,13 @@ import tkinter.ttk as ttk
 from ttkthemes import ThemedTk
 from manager import *
 """ 
-Importamos tkinter para poder crear la ventana
-Tambien importamos todos los metodos y clases de recetario que nos permite utlizarlas en lo que necesitemos
+Importamos tkinter para crear la ventana
+Importamos todos los metodos y clases de recetario que nos permiteN utlizarlas 
 """
 
 class VentanaCreareceta(ttk.Frame):
     """
-    En esta clase creamos la ventana que permite crear una nueva receta
+    Esta clase permite crear una nueva receta
     """
 
     def __init__(self, master=None):
@@ -25,7 +25,7 @@ class VentanaCreareceta(ttk.Frame):
         self.recetas_service = Manager("recetario.json")
 
         """
-        Creacion de los widgets con sus entry correspondientes
+        Creacion de los widgets y sus entry 
         """
         tk.Label(self, text="Nombre de la nueva receta: ").grid(row=0, column=0)
         self.nombre_receta = tk.Entry(self)
@@ -72,14 +72,14 @@ class VentanaCreareceta(ttk.Frame):
         self.etiqueta.grid(row=9, column=1)
 
         """
-        Creamos un Checkbox para indicar si la receta es favorita
+        Checkbox para indicar si la receta es favorita
         """
         self.favorita = tk.IntVar() 
         tk.Checkbutton(self, text="Si", variable=self.favorita).grid(row=10, column=1)
         tk.Label(self, text="Favorita (tildar si es favorita)").grid(row=10, column=0)
 
         """
-        Creamos los dos botones necesarios para poder invocar a las funciones necesarias
+        Creamos los botones Agregar receta y Agregar Ingredientes
         """
         tk.Button(self, text="Agregar receta", command=self.agregar_receta).grid(row=11, column=2)
 
@@ -89,7 +89,7 @@ class VentanaCreareceta(ttk.Frame):
 
     def agregar_receta(self):
         """
-        Funcion que permite consumir los datos de todos los campos entrados en los widgets de la ventana
+        Funcion que permite usar los datos en los widgets de la ventana
         """
         nombre=self.nombre_receta.get()
         preparacion= self.preparacion.get().split(",")
@@ -104,7 +104,7 @@ class VentanaCreareceta(ttk.Frame):
                 "coccion": coccion, "fecha": fecha, "etiquetas": etiquetas, "favorita": favorita}
 
         """
-        LLamamos al metodo addone del servicio
+        LLamamos al metodo sum_one del servicio
         """
         res= self.recetas_service.sum_one(nombre,receta) 
 
@@ -121,14 +121,14 @@ class VentanaCreareceta(ttk.Frame):
 
     def agregar_ingrediente(self):
         """ 
-        Funcion que permite agregar más de un ingrediente en la receta, guardando los datos de los campos 
+        Esta funcion permite agregar más de un ingrediente en la receta, guardando los datos.
         """
         nombre = self.nomb_ingr.get()
         cantidad = self.cantidad.get()
         unidad = self.un_medida.get()
 
         """
-        se agrega los datos tomados en una lista
+        Agrega los datos en una lista
         """
         self.ingredientes.append({"nombre": nombre, "cantidad": cantidad, "unidad_de_medida": unidad})
 
