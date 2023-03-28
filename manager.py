@@ -1,5 +1,5 @@
 import json
-class Manager:
+class Manager:  # anita revisa esto
     ruta = 'archivos/'        
 
     def __init__(self, archivo: str):  #constructor init
